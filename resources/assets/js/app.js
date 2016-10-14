@@ -15,6 +15,18 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+require('./animal');
+require('./dog');
+require('./cat');
+
+//
+//     And this is how your scenario plays out:
+
+var cat = new Cat();
+var dog = new Dog();
+
+cat.eat();
+dog.eat();
+cat.say();
+dog.say();
+
