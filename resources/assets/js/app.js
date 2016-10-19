@@ -13,26 +13,44 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
-
+// Vue.component('example', require('./components/Example.vue'));
+//
 const app = new Vue({
     el: '#app'
 });
-
-var mymodul = require('./animal');
-
-var Animal = new mymodul.Animal();
-require('./dog');
-require('./cat');
-
 //
-//     And this is how your scenario plays out:
+// var mymodul = require('./animal');
+//
+// var Animal = new mymodul.Animal();
+// require('./dog');
+// require('./cat');
+//
+// //
+// //     And this is how your scenario plays out:
+//
+// var cat = new Cat();
+// var dog = new Dog();
+//
+// cat.eat();
+// dog.eat();
+// cat.say();
+// dog.say();
 
-var cat = new Cat();
-var dog = new Dog();
+//CSS Selectors
+$("#getuser").click(function () {
 
-cat.eat();
-dog.eat();
-cat.say();
-dog.say();
+    $.ajax({
+        // type: "GET",
+        url: "http://localhost:800/apicutre/user/1",
+        success: function (result) {
+            // console.log("Ajax OK!");
+            // console.log(result);
+            $("#user").val(result);
+        },
+        error:function () {
+            console.log("Ha petat petició ajax");
+        }
+    });
+
+});
 

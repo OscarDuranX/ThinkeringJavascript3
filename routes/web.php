@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/apicutre/user/1', function (){
+    return "usuari 1";
+});
