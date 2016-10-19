@@ -15,7 +15,13 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-require('./animal');
+const app = new Vue({
+    el: '#app'
+});
+
+var mymodul = require('./animal');
+
+var Animal = new mymodul.Animal();
 require('./dog');
 require('./cat');
 

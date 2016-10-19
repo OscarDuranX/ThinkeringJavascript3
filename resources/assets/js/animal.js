@@ -19,3 +19,5 @@ Animal.prototype.say = function() {
 Animal.prototype.eat = function() {
     console.log("Animal is eating.");
 }
+
+exports.Animal = Animal;
