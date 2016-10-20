@@ -41,7 +41,7 @@ $("#getuser").click(function () {
 
     $.ajax({
         // type: "GET",
-        url: "http://localhost:800/apicutre/user/1",
+        url: "http://localhost:8000/apicutre/user/1",
         success: function (result) {
             // console.log("Ajax OK!");
             // console.log(result);
@@ -54,3 +54,31 @@ $("#getuser").click(function () {
 
 });
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+})
+
+$("#postuser").click(function () {
+
+    var parametros = {
+        "valor1" : $("#userpost").val(),
+    };
+
+    $.ajax({
+        type: "post",
+        url: "http://localhost:8000/apicutre/user/1",
+        data: parametros,
+        success: function (result) {
+            // console.log("Ajax OK!");
+
+            // console.log(result);
+            $("#resultpost").val(result);
+        },
+        error:function () {
+            console.log("Ha petat petició ajax");
+        }
+    });
+
+});

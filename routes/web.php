@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/apicutre/user/1', function (){
     return "usuari 1";
 });
+
+Route::post('/apicutre/user/1', function (){
+
+
+    return $_POST['valor1'];
+});
